@@ -97,7 +97,7 @@
     display: block;
     font-size: 30px;
     color: #626262;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .article__date{
     display: inline-block;
@@ -106,7 +106,7 @@
     font-size: 12px;
     text-transform: uppercase;
     color: #b4ad9e;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .article__content{
     font-family: PlayfairDisplay;
