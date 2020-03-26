@@ -72,6 +72,20 @@
 }
 .navigation__item{
     list-style-type: none;
+    position: relative;
+}
+.navigation__item:before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #626262;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform .3s ease;
+}
+.navigation__item:hover:before{
+    transform: scaleX(1);
 }
 .navigation__item:not(:last-child){
     margin-right: 130px;
@@ -79,8 +93,11 @@
 .article.main{
     margin-bottom: 130px;
 }
-.article.main .article__banner{
-    margin-bottom: 100px;
+.article.main .article__banner-link{
+    width: 50%;
+    display: block;
+    float: left;
+    margin-right: 20px;
 }
 .article__subtitle{
     display: inline-block;
@@ -116,16 +133,33 @@
 .article__link{
     display: inline-block;
     text-decoration: none;
-    margin-top: 80px;
     font-family: Ubuntu;
     font-weight: 200;
     font-size: 14px;
     text-transform: uppercase;
     color: #b4ad9e;
+    opacity: .8;
+    transition: opacity .3s ease;
+}
+.article__link:hover{
+    opacity: 1;
+}
+.article__footer{
+    margin-top: 30px;
+}
+.article.main figure{
+    margin: 0;
+}
+.article figure{
+    overflow:hidden;
+    margin-bottom: 30px;
 }
 .article__banner{
-    margin-bottom: 30px;
     max-width: 100%;
+    transition: transform .3s ease;
+}
+.article__banner:hover{
+    transform: scale(1.2);
 }
 .article__set{
     display: flex;
@@ -190,6 +224,11 @@
     padding: 24px 38px;
     color: #626262;
     border: 1px solid #626262;
+    transition: color .3s ease, background-color .3s ease;
+}
+.article__load-more:hover{
+    background-color: #000;
+    color: #fff;
 }
 .footer{
     padding: 40px 0;
@@ -205,6 +244,23 @@
     color: #000;
     display: inline-block;
     text-decoration: none;
+}
+.footer__link.legal{
+    position: relative;
+}
+.footer__link.legal:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+.footer__link.legal:hover:before{
+    transform: scaleX(1);
 }
 .footer__link svg{
     display: block;
